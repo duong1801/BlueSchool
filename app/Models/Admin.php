@@ -13,4 +13,7 @@ class Admin extends Model
     {
         static::addGlobalScope(new AdminScope());
     }
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 }

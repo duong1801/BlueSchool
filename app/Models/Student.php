@@ -14,4 +14,7 @@ class Student extends Model
     {
         static::addGlobalScope(new StudentScope());
     }
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 }

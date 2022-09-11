@@ -13,4 +13,7 @@ class Author extends Model
     {
         static::addGlobalScope(new AuthorScope());
     }
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 }

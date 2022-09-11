@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('/student',App\Http\Controllers\UserController::class);
 });
 Route::group(['prefix' => 'user', 'middleware' => ['auth', 'role:student']], function () {
     Route::view('home', 'user/home');
